@@ -1,0 +1,26 @@
+services:
+  app:
+    build: ./app
+    depends_on:
+      - mongo
+    networks:
+      - app-net
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+  mongo:
+    image: mongo:4.4
+    networks:
+      - mongo-net
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+networks:
+  app-net:
+    driver: bridge
+  mongo-net:
+    driver: bridge
