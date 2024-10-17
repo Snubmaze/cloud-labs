@@ -1,0 +1,17 @@
+services:
+  app:
+    build: ./app
+    depends_on:
+      - mongo
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+  mongo:
+    image: mongo:4.4
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
