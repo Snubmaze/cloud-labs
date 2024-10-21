@@ -31,6 +31,9 @@ jobs:
     - name: Test
       run: dotnet test MyDotNetApp/MyDotNetApp.csproj --no-build
 
+    - name: Set execute permission for the script
+      run: chmod +x ./run-scripts.sh
+
     - name: Run Additional Scripts
       run: ./run-scripts.sh
       if: success()
