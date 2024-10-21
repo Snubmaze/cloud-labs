@@ -1,0 +1,15 @@
+C:\Users\sevak\cloud-labs\MyDotNetApp\bin\Debug\net8.0\MyDotNetApp.exe
+C:\Users\sevak\cloud-labs\MyDotNetApp\bin\Debug\net8.0\MyDotNetApp.deps.json
+C:\Users\sevak\cloud-labs\MyDotNetApp\bin\Debug\net8.0\MyDotNetApp.runtimeconfig.json
+C:\Users\sevak\cloud-labs\MyDotNetApp\bin\Debug\net8.0\MyDotNetApp.dll
+C:\Users\sevak\cloud-labs\MyDotNetApp\bin\Debug\net8.0\MyDotNetApp.pdb
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.AssemblyInfoInputs.cache
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.AssemblyInfo.cs
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.csproj.CoreCompileInputs.cache
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.sourcelink.json
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.dll
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\refint\MyDotNetApp.dll
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.pdb
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\MyDotNetApp.genruntimeconfig.cache
+C:\Users\sevak\cloud-labs\MyDotNetApp\obj\Debug\net8.0\ref\MyDotNetApp.dll
