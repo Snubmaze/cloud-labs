@@ -23,13 +23,13 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore MyDotNetApp/MyDotNetApp.csproj
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build MyDotNetApp/MyDotNetApp.csproj --no-restore
 
     - name: Test
-      run: dotnet test --no-build
+      run: dotnet test MyDotNetApp/MyDotNetApp.csproj --no-build
 
     - name: Run Additional Scripts
       run: ./run-scripts.sh
