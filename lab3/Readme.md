@@ -98,7 +98,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: app-build
-        path: MyDotNetApp/bin/Debug/net8.0
+        path: MyDotNetApp/bin/Debug/net8.0/*.dll
 
     
 
