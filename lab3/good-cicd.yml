@@ -10,12 +10,20 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2.4.0
+
+    - name: Cache .NET packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
 
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
@@ -23,26 +31,34 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore MyDotNetApp/MyDotNetApp.csproj
 
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build MyDotNetApp/MyDotNetApp.csproj --no-restore
 
     - name: Test
-      run: dotnet test --no-build
+      run: dotnet test MyDotNetApp/MyDotNetApp.csproj --no-build
 
-    - name: Run Additional Scripts
-      run: ./run-scripts.sh
-      if: success()
+    - name: Save build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-build
+        path: MyDotNetApp/bin/Debug/net8.0
+
+    
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2.4.0
+    - name: Download build artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: app-build
 
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v1
